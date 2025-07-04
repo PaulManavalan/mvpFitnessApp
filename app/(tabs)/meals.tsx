@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
 import { Button, StyleSheet, Text, useColorScheme, View } from 'react-native';
 
-export default function HomeScreen() {
+export default function MealsScreen() {
   const router = useRouter();
   const colorScheme = useColorScheme();
 
@@ -12,15 +12,14 @@ export default function HomeScreen() {
   return (
     <View style={[styles.container, { backgroundColor }]}>
       <Text style={[styles.title, { color: textColor }]}>
-        Welcome to Your Fitness MVP 💪
+        Meal Suggestions Screen 🍽️
       </Text>
-      <Button title="Go to Planner" onPress={() => router.push('/planner')} color={isDarkMode ? '#BB86FC' : '#6200EE'} />
-      <Button title="Go to Meals" onPress={() => router.push('/meals')} color={isDarkMode ? '#BB86FC' : '#6200EE'} />
+      <Button title="Back to Home" onPress={() => router.back()} color={isDarkMode ? '#BB86FC' : '#6200EE'} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  title: { fontSize: 24, marginBottom: 20 },
+  title: { fontSize: 24 },
 });
